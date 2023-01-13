@@ -87,7 +87,7 @@ function addNewLineElement(object) {
 
   function deleteUser(emailId){
     alert(emailId)
-    axios.delete("https://crudcrud.com/api/48e6f46cae574751bdaaf24ea9fa7ee2/Appointmentdata/",emailId)
+    axios.delete(`https://crudcrud.com/api/48e6f46cae574751bdaaf24ea9fa7ee2/Appointmentdata/${emailId}`)
     .then((response)=>{
       removeUserFromScreen(emailId)
     })
@@ -102,7 +102,7 @@ function addNewLineElement(object) {
   }
 
   function removeUserFromScreen(emailId){
-    const parentNode = document.getElementById('listofusers');
+    const parentNode = document.getElementById('listOfPeople');
     const childNodeToBeDeleted = document.getElementById(emailId);
     if(childNodeToBeDeleted){
       parentNode.removeChild(childNodeToBeDeleted)
